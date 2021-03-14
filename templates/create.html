@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Person</title>
+</head>
+<body>
+<a href="{{url_for('index')}}">Back to top</a>
+<h1>Agregar Persona</h1>
+<form method="POST">
+    {{forma.csrf_token}}
+    <p>
+        {{forma.name.label}} <br>
+        {{forma.name(size=30)}}
+    </p>
+    <p>
+        {{forma.surname.label}} <br>
+        {{forma.surname(size=30)}}
+    </p>
+    <p>
+        {{forma.email.label}} <br>
+        {{forma.email(size=30)}}
+    </p>
+    <p>
+        {{forma.country.label}} <br>
+        {{forma.country(size=30)}}
+    </p>
+    <p>
+        {{forma.send()}}
+    </p>
+
+</form>
+
+</body>
+</html>

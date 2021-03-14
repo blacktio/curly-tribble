@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of People</title>
+</head>
+<body>
+<h1 align="center">People Administration</h1>
+<div align="center">Total People: {{total_personas}}</div>
+<div align="center">
+        <table border="1">
+            <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Surname</th>
+                      <th>Email</th>
+                      <th>Country</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                 <tr>
+                     <td>{{persona.id}}</td>
+                     <td>{{persona.name}}</td>
+                     <td>{{persona.surname}}</td>
+                     <td>{{persona.email}}</td>
+                     <td>{{persona.country}}</td>
+                     <td><a href="edit-person/{{persona.id}}">Edit</a></td>
+                     <td><a href="delete/{{persona.id}}">Delete</a></td>
+                     <td><a href="read/{{persona.id}}">Read</a></td>
+                     <td><a href="/create-person">Create</a></td>
+
+
+                 </tr>
+                 {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
